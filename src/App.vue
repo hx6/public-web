@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <Header :menu="menu" />
     <router-view/>
   </div>
 </template>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -29,3 +26,22 @@
   color: #42b983;
 }
 </style>
+
+<script>
+import Header from "./components/Blocks/Header";
+export default {
+  components: {
+    Header
+  },
+  data() {
+    return {
+      menu: [
+        { id: 1, url: "/", title: "Home" },
+        { id: 2, url: "/login", title: "Login" },
+        { id: 3, url: "/register", title: "Register" }
+      ]
+    };
+  }
+};
+</script>
+
